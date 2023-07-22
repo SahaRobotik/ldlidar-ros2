@@ -264,11 +264,11 @@ void LiPkg::ToLaserscan(std::vector<PointData> src)
     if (index >= 0 && index < beam_size) {
       /*If the current content is Nan, it is assigned directly*/
       if (std::isnan(mOutScan->ranges[index])) {
-        mOutScan->ranges[index] = range;
+        mOutScan->ranges[index] = range + 0.0317644993 ; // distance unit transform to meters, moved to center
       } else {  // Otherwise, only when the distance is less than the current value, it can be
                 // re assigned
         if (range < mOutScan->ranges[index]) {
-          mOutScan->ranges[index] = range;
+          mOutScan->ranges[index] = range + 0.0317644993 ; // distance unit transform to meters, moved to center
         }
       }
       mOutScan->intensities[index] = point.confidence;
