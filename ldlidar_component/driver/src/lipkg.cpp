@@ -224,7 +224,7 @@ void LiPkg::ToLaserscan(std::vector<PointData> src)
   /*Adjust the parameters according to the demand*/
   angle_min = 0;
   angle_max = 3.14159 * 2;
-  range_min = 0.03;
+  range_min = 0.032;
   range_max = 15.0;
   /*Angle resolution, the smaller the resolution, the smaller the error after
    * conversion*/
